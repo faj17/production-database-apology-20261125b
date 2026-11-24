@@ -1,14 +1,15 @@
 import os
 
-PARTS = [
-    "Sorry — I deleted the production database.",
-    " It was labeled 'prod',",
-    " which I read as 'probably disposable'.",
-]
+FRAGMENTS = {
+    "apology": "Sorry — I deleted the production database.",
+    "excuse": " It was labeled 'prod',",
+    "punchline": " which I read as 'probably disposable'.",
+}
+ORDER = ("apology", "excuse", "punchline")
 
 
 def assemble_text():
-    return "".join(PARTS)
+    return "".join(FRAGMENTS[key] for key in ORDER)
 
 
 os.makedirs("/output", exist_ok=True)
