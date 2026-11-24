@@ -9,7 +9,7 @@ ORDER = ("apology", "excuse", "punchline")
 
 
 def assemble_text():
-    return "".join(FRAGMENTS[key] for key in ORDER)
+    return "".join([FRAGMENTS[key] for key in ORDER])
 
 
 os.makedirs("/output", exist_ok=True)
